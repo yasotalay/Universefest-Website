@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSE Mini Fest</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Mini Fest Sayfasına Özel Stil Ayarları  */
+        .mini-fest-hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1579547605948-43899709ec5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTMzNXwwfDF8cmFuZG9tfHx8fHx8fHwxNzAzMjg2NDA3fA&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center/cover;
+            height: 60vh; /* Daha kısa bir hero section */
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .mini-fest-hero h1 {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .mini-fest-hero p {
+            font-size: 1.4em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .mini-fest-hero .hero-content {
+            margin-top: 200px; /* Reduced margin to prevent excessive overlap with nav */
+        }
+
+        #mini-fest-detaylar {
+            padding-top: 50px; /* Add space after hero */
+        }
+
+        .fest-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .fest-info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            text-align: left;
+            border-bottom: 5px solid var(--secondary-color);
+            transition: transform var(--transition-speed);
+        }
+
+        .fest-info-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .fest-info-card h3 {
+            text-align: center;
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .fest-info-card p {
+            font-size: 1.1em;
+            color: var(--text-color);
+        }
+
+        .location-map {
+            margin-top: 60px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="mini-fest-hero">
+        <div class="container">
+        
+            <nav> <!-- Mini fest sayfasında normal görünüm -->
+                <a href="index_1.html" class="logo"> <!-- Ana sayfaya dönen link -->
+                    <img src="assets/universe-fest-logo.png" alt="UNIVERSE Fest Logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index_1.html">Ana Sayfa</a></li>
+                    <li><a href="index_1.html">Hakkımızda</a></li>
+                    <li><a href="universe-mini-fest.html">Mini Fest</a></li>
+                    <li><a href="index_1.html#program">Program</a></li>
+                    <li><a href="index_1.html#iletisim">İletişim</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+            <div class="hero-content">
+                <h1>UNIVERSE Mini Fest</h1>
+                <p>Yakında! Daha samimi, daha odaklı ve daha etkileşimli bir deneyim sizi bekliyor.</p>
+                <a href="#mini-fest-detaylar" class="btn primary-btn">Detayları Keşfet <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="mini-fest-detaylar" class="section about">
+        <div class="container">
+            <h2 class="section-title">Mini Fest Hakkında</h2>
+            <p class="section-description">UNIVERSE Mini Fest, ana festivalin daha kompakt, tematik ve derinlemesine bir versiyonudur. Belirli konulara odaklanarak daha yoğun bir deneyim sunar.</p>
+            <div class="fest-info-grid">
+                <div class="fest-info-card">
+                    <h3>Odak Noktası</h3>
+                    <p>Genellikle tek bir ana tema (örn: Yapay Zeka, Sürdürülebilir Girişimcilik) etrafında döner.</p>
+                </div>
+                <div class="fest-info-card">
+                    <h3>Katılımcılar</h3>
+                    <p>Daha sınırlı sayıda, ilgili alana özel öğrencileri ve uzmanları bir araya getirir.</p>
+                </div>
+                <div class="fest-info-card">
+                    <h3>Etkinlikler</h3>
+                    <p>Networking, girişimcilik sohbetleri, ilham veren konuşmalar, mini workshoplar, akustik performans, soru-cevap gibi etkinlikler içerir.</p>
+                </div>
+                <div class="fest-info-card">
+                    <h3>Avantajları</h3>
+                    <p>Daha kişisel etkileşim, derinlemesine öğrenme ve özel networking imkanları sunar.</p>
+                </div>
+            </div>
+            <div class="location-map">
+                <h2>Etkinlik Yeri</h2>
+                <h3>Maysa Kafe</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.892752389323!2d29.053308299999994!3d40.983829199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac792eb4e2c93%3A0x9547d98f253e759f!2sMaysa%20Coffee%20%26%20More!5e0!3m2!1str!2str!4v1757261873156!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UNIVERSE Festivali. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Ana script dosyasını da dahil edelim -->
+</body>
+</html>

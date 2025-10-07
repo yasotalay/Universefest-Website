@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSE Festivali</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Mini Fest Pop-up -->
+    <div id="miniFestPopup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>UNIVERSE Mini Fest Yaklaşıyor!</h2>
+            <p>Daha küçük ama daha etkileşimli bir deneyim için hazır mısın?</p>
+            <button id="goToMiniFest" class="btn popup-btn primary-btn">Mini Fest Sayfasına Git</button> <br>
+            <button id="stayOnMain" class="btn popup-btn secondary-btn">Ana Sayfada Kal</button>
+            <div class="popup-image">
+                <!-- Buraya bir görsel ekleyelim -->
+                <img src="https://images.unsplash.com/photo-1579547605948-43899709ec5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTMzNXwwfDF8cmFuZG9tfHx8fHx8fHwxNzAzMjg2NDA3fA&ixlib=rb-4.0.3&q=80&w=600" alt="Mini Fest Tanıtım Görseli">
+            </div>
+        </div>
+    </div>
+
+    <header class="hero">
+        <div class="container">
+            <nav>
+                <a href="index_1.html" class="logo"> <!-- Logoyu tıklanabilir yapmak için <a> etiketi ekledik -->
+                <img src="assets/universe-fest-logo.png" alt="UNIVERSE Fest Logo"> </a>
+                <ul class="nav-links">
+                    <li><a href="#hakkimizda">Hakkımızda</a></li>
+                    <li><a href="universe-mini-fest.html">Mini Fest</a></li> 
+                    <li><a href="#program">Program</a></li>
+                    <li><a href="#konusmacilar">Konuşmacılar</a></li>
+                    <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+            <div class="hero-content">
+                <h1>UNIVERSE Evrenine Hoş Geldiniz!</h1>
+                <p>Türkiye'nin dört bir yanından üniversite öğrencilerini bir araya getiren etkileşim, gelişim ve ilham platformu.</p>
+                <a href="#hakkimizda" class="btn primary-btn">Daha Fazla Keşfet <i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hakkimizda" class="section about">
+        <div class="container">
+            <h2 class="section-title">UNIVERSE Nedir?</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>UNIVERSE, Türkiye’deki üniversite öğrencilerini tek bir çatı altında buluşturmayı amaçlayan, çok yönlü ve katılımcı bir festival projesidir. İsminden de anlaşılacağı üzere, farklı disiplinlerden, şehirlerden ve kültürlerden gelen üniversite topluluklarını aynı “evren” içinde bir araya getirme fikrine dayanır.</p>
+                    <p>Bu evrenin temelinde yalnızca eğlenmek değil, etkileşim kurmak, üretmek, öğrenmek ve birbirinden ilham almak vardır. UNIVERSE adı, yalnızca bir etkinlik markası değil; aynı zamanda uzun vadeli bir vizyonun ve üniversite öğrencileri arası çok boyutlu iş birliklerinin sembolü olarak seçilmiştir.</p>
+                    <p>Festivalin kimliği, klasik anlamdaki “üniversite festivallerinden” farklı olarak, yalnızca konser ya da sahne gösterilerinden ibaret değildir. Aksine UNIVERSE, öğrenci kulüpleri, girişimciler, sosyal fayda odaklı topluluklar ve geleceğin lider adayları için tasarlanmış bir etkileşim ve gelişim platformudur.</p>
+                    <p>UNIVERSE, tamamen öğrenciler tarafından hayata geçirilen bağımsız bir proje olarak doğmuştur; ancak amacı yalnızca bugünün katılımcılarına değil, ileride oluşacak sürekli üniversiteler arası iş birliği kültürüne de temel oluşturmaktır. Bu nedenle proje, sadece tek seferlik bir etkinlik değil, her yıl üzerine koyarak büyümesi hedeflenen sürdürülebilir bir yapı olarak planlanmıştır. Bizim de amacımız UNIVERSE kültürünü bütün üniversitelere yaymaktır.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/universe-fest-logo.png" alt="UNIVERSE Fest Logo"> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="program" class="section program bg-light">
+        <div class="container">
+            <h2 class="section-title">Festival Programı</h2>
+            <p class="section-description">UNIVERSE'in dinamik ve ilham verici dolu programını keşfet!</p>
+            <div class="program-grid">
+                <div class="program-card">
+                    <i class="fas fa-chalkboard-teacher icon"></i>
+                    <h3>Etkileşimli Atölyeler</h3>
+                    <p>Alanında uzman kişilerle uygulamalı çalışmalara katıl, yeni beceriler kazan.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-comments icon"></i>
+                    <h3>Panel ve Söyleşiler</h3>
+                    <p>Öncü isimlerden ilham verici hikayeler dinle, sorularını sor.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-music icon"></i>
+                    <h3>Canlı Performanslar</h3>
+                    <p>Günün yorgunluğunu atmak için DJ performansları ve konserler.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-handshake icon"></i>
+                    <h3>Networking Alanları</h3>
+                    <p>Farklı üniversitelerden öğrencilerle tanış, kariyerine yön ver.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-rocket icon"></i>
+                    <h3>Girişimcilik Stantları</h3>
+                    <p>Genç girişimcilerin projelerini keşfet, fikirlerini paylaş.</p>
+                </div>
+                <div class="program-card">
+                    <i class="fas fa-gamepad icon"></i>
+                    <h3>Eğlence ve Oyun Alanları</h3>
+                    <p>Turnuvalar, VR deneyimleri ve çok daha fazlası.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="konusmacilar" class="section speakers">
+        <div class="container">
+            <h2 class="section-title">İlham Veren Konuşmacılar</h2>
+            <p class="section-description">Alanında öncü isimlerden ilham veren hikayeler ve değerli bilgiler edinin.</p>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <img src="assets/siyah.jpg" alt="Prof. Dr. xx">
+                    <h3>Prof. Dr. Enes Çakan</h3>
+                    <p>Yapay Zeka Uzmanı</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="assets/siyah.jpg" alt="xx">
+                    <h3>Bora Erkoç</h3>
+                    <p>Girişimci & Melek Yatırımcı</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="assets/siyah.jpg" alt="xx">
+                    <h3>Yasemin Talay</h3>
+                    <p>Sürdürülebilirlik Aktivisti</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <img src="assets/siyah.jpg" alt="xx">
+                    <h3>Yaso 2</h3>
+                    <p>Dijital Pazarlama Uzmanı</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeri" class="section gallery bg-light">
+        <div class="container">
+            <h2 class="section-title">UNIVERSE Anları</h2>
+            <p class="section-description">Geçmiş festivallerimizden unutulmaz kareler ve enerji dolu anlar.</p>
+            <div class="gallery-grid">
+                <img src="assets/siyah.jpg" alt="Festival Anı 1">
+                <img src="assets/siyah.jpg" alt="Festival Anı 2">
+                <img src="assets/siyah.jpg" alt="Festival Anı 3">
+                <img src="assets/siyah.jpg" alt="Festival Anı 4">
+                <img src="assets/siyah.jpg" alt="Festival Anı 5">
+                <img src="assets/siyah.jpg" alt="Festival Anı 6">
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Bizimle İletişime Geçin</h2>
+            <p class="section-description">Festivalimiz hakkında daha fazla bilgi almak, ortaklık kurmak veya gönüllü olmak için bize yazın.</p>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Adınız Soyadınız" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="E-posta Adresiniz" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Mesajınız" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Gönder <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <div class="contact-info">
+                    <h3>Bize Ulaşın</h3>
+                    <p><i class="fas fa-envelope"></i> info@universefestival.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +90 5XX XXX XX XX</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Türkiye Geneli Üniversiteler</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UNIVERSE Festivali. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
