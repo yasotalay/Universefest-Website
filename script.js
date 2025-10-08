@@ -73,58 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mini Fest Pop-up Logic
-    const miniFestPopup = document.getElementById('miniFestPopup');
-    const closePopupBtn = miniFestPopup.querySelector('.close-btn');
-    const goToMiniFestBtn = document.getElementById('goToMiniFest');
-    const stayOnMainBtn = document.getElementById('stayOnMain');
-
-    const popupKey = 'miniFestPopupShown';
-    
-    // Pop-up'ı gösterme fonksiyonu
-    function showPopupOnce() {
-        if (localStorage.getItem(popupKey) === null) {
-            setTimeout(() => {
-                miniFestPopup.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Sayfa kaydırmayı engelle
-            }, 2000); // 2 saniye gecikme ile göster
-            localStorage.setItem(popupKey, 'true');
-        }
-    }
-
-    // Pop-up'ı kapatma fonksiyonu
-    function closePopup() {
-        miniFestPopup.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Sayfa kaydırmayı tekrar etkinleştir
-    }
-
-    // Sayfa yüklendiğinde pop-up'ı kontrol et ve göster
-    showPopupOnce();
-
-    // Event listeners
-    closePopupBtn.addEventListener('click', closePopup);
-    stayOnMainBtn.addEventListener('click', closePopup);
-    
-    goToMiniFestBtn.addEventListener('click', () => {
-        closePopup();
-        setTimeout(() => {
-            window.location.href = 'universe-mini-fest.html';
-        }, 300);
-    });
-
-    // Pop-up dışına tıklandığında kapat
-    miniFestPopup.addEventListener('click', (e) => {
-        if (e.target === miniFestPopup) {
-            closePopup();
-        }
-    });
-
-    // ESC tuşu ile kapat
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && miniFestPopup.classList.contains('active')) {
-            closePopup();
-        }
-    });
 
     // Scroll-triggered animations
     const observerOptions = {
