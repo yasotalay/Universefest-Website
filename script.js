@@ -178,6 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Success
                     showFormMessage('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.', 'success');
                     contactForm.reset();
+
+                    // Redirect to main page after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 3000);
                 } else {
                     // Error
                     showFormMessage('Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.', 'error');
