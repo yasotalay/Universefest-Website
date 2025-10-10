@@ -128,4 +128,79 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
+
+    // Contact Form Functionality
+    const contactForm = document.querySelector('.contact-form');
+    const submitBtn = contactForm.querySelector('.btn primary-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const formMessage = contactForm.querySelector('.form-message');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = contactForm.querySelector('#name').value.trim();
+            const email = contactForm.querySelector('#email').value.trim();
+            const message = contactForm.querySelector('#message').value.trim();
+
+            // Basic validation
+            if (!name || !email || !message) {
+                showFormMessage('Lütfen tüm alanları doldurun.', 'error');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showFormMessage('Lütfen geçerli bir e-posta adresi girin.', 'error');
+                return;
+            }
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                // Submit form using Fetch API
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success
+                    showFormMessage('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.', 'success');
+                    contactForm.reset();
+                } else {
+                    // Error
+                    showFormMessage('Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                }
+            } catch (error) {
+                showFormMessage('Ağ hatası oluştu. Lütfen internet bağlantınızı kontrol edin.', 'error');
+            } finally {
+                // Reset button state
+                btnText.style.display = 'inline-block';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        function showFormMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+    }
 });

@@ -16,7 +16,7 @@
                 <img src="assets/universe-fest-logo.png" alt="UNIVERSE Fest Logo"> </a>
                 <ul class="nav-links">
                     <li><a href="#hakkimizda">Hakkımızda</a></li>
-                    <li><a href="universe-mini-fest.html">Mini Fest</a></li> 
+                    <li><a href="universe-mini-fest.html">Mini Talks</a></li> 
                     <li><a href="#program">Program</a></li>
                     <li><a href="#konusmacilar">Konuşmacılar</a></li>
                     <li><a href="#galeri">Galeri</a></li>
@@ -140,7 +140,7 @@
     <section id="galeri" class="section gallery bg-light">
         <div class="container">
             <h2 class="section-title">UNIVERSE Anları</h2>
-            <p class="section-description">Geçmiş festivallerimizden unutulmaz kareler ve enerji dolu anlar.</p>
+            <p class="section-description">Geçmiş etkinlikleirmizden unutulmaz kareler ve enerji dolu anlar.</p>
             <div class="gallery-grid">
                 <img src="assets/siyah.jpg" alt="Festival Anı 1">
                 <img src="assets/siyah.jpg" alt="Festival Anı 2">
@@ -157,28 +157,31 @@
             <h2 class="section-title">Bizimle İletişime Geçin</h2>
             <p class="section-description">Festivalimiz hakkında daha fazla bilgi almak, ortaklık kurmak veya gönüllü olmak için bize yazın.</p>
             <div class="contact-content">
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/xeqypkwd" method="POST">
                     <div class="form-group">
-                        <input type="text" id="name" placeholder="Adınız Soyadınız" required>
+                        <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="E-posta Adresiniz" required>
+                        <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" placeholder="Mesajınız" rows="6"></textarea>
+                        <textarea id="message" name="message" placeholder="Mesajınız" rows="6" required></textarea>
                     </div>
-                    <button type="submit" class="btn primary-btn">Gönder <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btn primary-btn">
+                        <span class="btn-text">Gönder <i class="fas fa-paper-plane"></i></span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Gönderiliyor...
+                        </span>
+                    </button>
+                    <div class="form-message" style="display: none;"></div>
                 </form>
                 <div class="contact-info">
                     <h3>Bize Ulaşın</h3>
-                    <p><i class="fas fa-envelope"></i> info@universefestival.com</p>
-                    <p><i class="fas fa-phone-alt"></i> +90 5XX XXX XX XX</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Türkiye Geneli Üniversiteler</p>
+                    <p><i class="fas fa-envelope"></i> enes.cakan@universefest.net</p>
+                    <p><i class="fas fa-envelope"></i> bora.erkoc@universefest.net</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Göztepe/İstanbul</p>
                     <div class="social-media">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/universefest_official/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>

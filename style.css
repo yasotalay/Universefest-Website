@@ -985,6 +985,56 @@ nav .nav-links li a:not(:hover) {
     font-size: 1.1em;
 }
 
+/* Form Feedback States */
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn-loading .btn-text {
+    display: none;
+}
+
+.btn-loading .btn-loading {
+    display: inline-block !important;
+}
+
+.form-message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+    animation: messageSlideIn 0.3s ease-out;
+}
+
+.form-message.success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    box-shadow: 0 4px 15px rgba(21, 87, 36, 0.1);
+}
+
+.form-message.error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    box-shadow: 0 4px 15px rgba(114, 28, 36, 0.1);
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .contact-info {
     background: var(--gradient-primary);
     color: var(--light-text-color);
@@ -1023,6 +1073,15 @@ nav .nav-links li a:not(:hover) {
 .contact-info .social-icon {
     background: rgba(var(--light-text-color-rgb), 0.1); /* Krem renginden şeffaf bir arka plan */
     color: var(--light-text-color); /* İkon rengi krem */
+    font-size: 2em;
+    width: 45px;
+    height:45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-left: 300px;
+    transition: all 0.3s ease;
     /* ... diğer stiller ... */
 }
 
