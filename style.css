@@ -1085,7 +1085,8 @@ nav .nav-links li a:not(:hover) {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin-left: 300px;
+    margin-left: 0;
+    margin-right: auto;
     transition: all 0.3s ease;
     /* ... diğer stiller ... */
 }
@@ -1240,14 +1241,14 @@ footer {
     }
 
     nav .logo img {
-        height: 50px; /* Reasonable mobile logo size */
+        height: 65px; /* Larger mobile logo size for better visibility */
         top: 50%;
         left: 20px;
         transform: translateY(-50%);
     }
 
     nav.scrolled .logo img {
-        height: 45px; /* Slightly smaller when scrolled on mobile */
+        height: 60px; /* Larger when scrolled on mobile for better visibility */
         top: 50%;
         transform: translateY(-50%);
     }
