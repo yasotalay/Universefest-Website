@@ -107,6 +107,8 @@ ul {
     position: relative;
     overflow: hidden;
     text-decoration: none;
+    min-height: 48px; /* Minimum touch target size */
+    min-width: 48px;
 }
 
 .btn::before {
@@ -351,13 +353,15 @@ nav .logo {
 }
 
 nav .logo img {
-    height: 250px; /* Çok büyük logo boyutu */
+    height: 60px; /* Reasonable logo size for desktop */
     width: auto; /* Orantılı genişlik */
     position: absolute;
-    top: 20px; /* Position logo below nav with small padding */
-    left: 0;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%); /* Center vertically in nav */
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Logo için çok smooth geçiş */
     filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
+    z-index: 100;
 }
 
 nav .logo img:hover {
@@ -366,8 +370,9 @@ nav .logo img:hover {
 
 /* Eğer navigasyon kaydırıldığında logo boyutu değişsin isterseniz */
 nav.scrolled .logo img {
-    height: 200px; /* PNG logo için kaydırıldığında büyük boyut */
-    top: 95px; /* Position below scrolled nav with padding */
+    height: 50px; /* PNG logo için kaydırıldığında daha küçük boyut */
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 nav .nav-links {
@@ -445,7 +450,7 @@ nav .nav-links li a:not(:hover) {
 }
 
 .hero-content {
-    margin-top: 200px; /* Daha büyük logo için uygun margin */
+    margin-top: 120px; /* Reasonable margin for normal logo size */
     animation: heroContentFadeIn 1.5s ease-out 0.5s both;
 }
 
@@ -1152,30 +1157,31 @@ footer {
     nav .nav-links {
         position: fixed;
         right: -100%;
-        top: 0;
-        height: 100vh;
+        top: 70px; /* Start below nav bar */
+        height: calc(100vh - 70px); /* Fill remaining screen height */
         width: 100%;
-        background: linear-gradient(135deg, 
-            rgba(44, 58, 90, 0.98) 0%, 
-            rgba(30, 43, 64, 0.98) 50%, 
+        background: linear-gradient(135deg,
+            rgba(44, 58, 90, 0.98) 0%,
+            rgba(30, 43, 64, 0.98) 50%,
             rgba(44, 58, 90, 0.98) 100%);
         backdrop-filter: blur(25px) saturate(180%);
         -webkit-backdrop-filter: blur(25px) saturate(180%);
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start; /* Start from top instead of center */
         align-items: center;
         transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         z-index: 150;
         border-left: 2px solid transparent;
-        border-image: linear-gradient(180deg, 
-            transparent, 
-            rgba(203, 178, 106, 0.5), 
+        border-image: linear-gradient(180deg,
+            transparent,
+            rgba(203, 178, 106, 0.5),
             transparent) 1;
-        box-shadow: 
+        box-shadow:
             -10px 0 30px rgba(44, 58, 90, 0.3),
             inset 1px 0 0 rgba(255, 255, 255, 0.1);
         gap: 20px;
-        padding: 0;
+        padding: 40px 0; /* Add padding for better spacing */
+        overflow-y: auto; /* Allow scrolling if needed */
     }
     
     nav .nav-links.active {
@@ -1197,13 +1203,17 @@ footer {
     nav .nav-links li:nth-child(6) { animation-delay: 0.6s; }
     
     nav .nav-links li a {
-        font-size: 1.8em;
-        padding: 20px 40px;
+        font-size: 1.4em; /* Smaller, more appropriate size */
+        padding: 15px 30px; /* Better touch target size */
+        margin: 8px 0; /* Space between items */
         background: rgba(255, 255, 255, 0.05);
-        border-radius: 50px;
+        border-radius: 25px; /* Less rounded for better touch */
         border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         transition: all 0.3s ease;
+        min-width: 200px; /* Consistent width */
+        text-align: center; /* Center text */
+        display: block;
     }
     
     nav .nav-links li a:hover {
@@ -1224,19 +1234,27 @@ footer {
     }
     
     /* Logo mobile */
+    nav {
+        height: 70px; /* Reduce nav height for mobile */
+        padding: 10px 20px;
+    }
+
     nav .logo img {
-        height: 200px; /* PNG logo için mobile'da büyük boyut */
-        top: 95px; /* Mobile positioning below nav with padding */
+        height: 50px; /* Reasonable mobile logo size */
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
     }
 
     nav.scrolled .logo img {
-        height: 160px; /* PNG logo için mobile'da kaydırıldığında büyük boyut */
-        top: 95px; /* Mobile scrolled positioning below nav with padding */
+        height: 45px; /* Slightly smaller when scrolled on mobile */
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     /* Hero Section Mobile */
     .hero-content {
-        margin-top: 200px; /* Daha büyük logo için uygun margin */
+        margin-top: 100px; /* Reasonable margin for mobile */
     }
     
     .hero-content h1 {
@@ -1333,9 +1351,27 @@ footer {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .contact-form .btn {
         width: 100%;
+        font-size: 1.1em; /* Larger text for better readability */
+    }
+
+    /* Better mobile navigation close button */
+    .burger {
+        width: 40px;
+        height: 35px;
+        padding: 10px;
+    }
+
+    /* Improve mobile scrolling experience */
+    body {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better mobile font sizes */
+    .section-title {
+        line-height: 1.2; /* Better line height for mobile */
     }
     
     .contact-info {
@@ -1355,6 +1391,18 @@ footer {
     /* Section Padding Mobile */
     .section {
         padding: 60px 0;
+    }
+
+    /* Better mobile spacing for cards and sections */
+    .program-card, .speaker-card {
+        margin-bottom: 30px;
+    }
+
+    /* Improve form elements for mobile */
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 18px 20px; /* Better touch targets */
     }
 }
 
@@ -1389,14 +1437,22 @@ footer {
         padding: 25px 15px;
     }
     
+    nav {
+        height: 60px; /* Even smaller nav height for extra small screens */
+        padding: 8px 15px;
+    }
+
     nav .logo img {
-        height: 180px; /* PNG logo için küçük mobile'da büyük boyut */
-        top: 95px; /* Extra small mobile positioning below nav with padding */
+        height: 45px; /* Smaller logo for extra small screens */
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
     }
 
     nav.scrolled .logo img {
-        height: 140px; /* PNG logo için küçük mobile'da kaydırıldığında büyük boyut */
-        top: 95px; /* Extra small mobile scrolled positioning below nav with padding */
+        height: 40px; /* Even smaller when scrolled on extra small screens */
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .about-image img {
