@@ -793,6 +793,7 @@ nav .nav-links li a:not(:hover) {
     transform: translateY(50px);
     animation: speakerCardReveal 0.8s ease-out both;
     margin-bottom: 30px; /* Added margin between cards */
+    cursor: default;
 }
 
 .speaker-card:nth-child(1) { animation-delay: 0.1s; }
@@ -811,6 +812,7 @@ nav .nav-links li a:not(:hover) {
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 20px;
+    pointer-events: none;
 }
 
 .speaker-card:hover::before {
@@ -866,15 +868,41 @@ nav .nav-links li a:not(:hover) {
     font-weight: 600;
 }
 
+.speaker-card .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 5;
+}
+
 .speaker-card .social-icons a {
     color: var(--text-color);
-    font-size: 1.4em;
-    margin: 0 8px;
-    transition: color var(--transition-speed);
+    font-size: 1.6em;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(26, 54, 93, 0.1);
+    transition: all var(--transition-speed);
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer !important;
+    position: relative;
+    z-index: 10;
+    user-select: none;
 }
 
 .speaker-card .social-icons a:hover {
     color: var(--primary-color);
+    background: rgba(26, 54, 93, 0.2);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(26, 54, 93, 0.3);
 }
 
 /* ========================================
@@ -1335,14 +1363,20 @@ footer {
     .speaker-card {
         padding: 25px 20px;
     }
-    
+
     .speaker-card img {
         width: 120px;
         height: 120px;
     }
-    
+
     .speaker-card h3 {
         font-size: 1.5em;
+    }
+
+    .speaker-card .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.4em;
     }
     
     /* Gallery Section Mobile */
@@ -1436,10 +1470,16 @@ footer {
     .speaker-card {
         padding: 20px 15px;
     }
-    
+
     .speaker-card img {
         width: 100px;
         height: 100px;
+    }
+
+    .speaker-card .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2em;
     }
     
     .contact-info {

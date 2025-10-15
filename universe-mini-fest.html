@@ -10,8 +10,8 @@
     <style>
         /* Mini Fest Sayfasına Özel Stil Ayarları  */
         .mini-fest-hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1579547605948-43899709ec5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTMzNXwwfDF8cmFuZG9tfHx8fHx8fHwxNzAzMjg2NDA3fA&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center/cover;
-            height: 60vh; /* Daha kısa bir hero section */
+            background: linear-gradient(rgba(82, 124, 167, 0.7), rgba(65, 111, 156, 0.7)), url('https://images.unsplash.com/photo-1579547605948-43899709ec5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTMzNXwwfDF8cmFuZG9tfHx8fHx8fHwxNzAzMjg2NDA3fA&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center/cover;
+            height: 80vh; /* Increased height for better button layout */
             display: flex;
             align-items: center;
             color: var(--white);
@@ -29,10 +29,48 @@
             font-size: 1.4em;
             max-width: 700px;
             margin: 0 auto;
+            
         }
 
         .mini-fest-hero .hero-content {
-            margin-top: 200px; /* Reduced margin to prevent excessive overlap with nav */
+            margin-top: 120px; /* Adjusted for taller hero section */
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 768px) {
+            .mini-fest-hero {
+                height: 70vh; /* Slightly shorter on mobile but still taller than before */
+            }
+
+            .mini-fest-hero .hero-content {
+                margin-top: 80px; /* Adjusted for taller hero */
+            }
+
+            .mini-fest-hero h1 {
+                font-size: 2.5em; /* Smaller title on mobile */
+                margin-bottom: 20px;
+            }
+
+            .mini-fest-hero p {
+                font-size: 1.1em; /* Smaller text on mobile */
+                margin-bottom: 15px;
+            }
+
+            .btn.primary-btn {
+                display: inline-flex !important; /* Force button visibility */
+                visibility: visible !important;
+                opacity: 1 !important;
+                padding: 14px 25px;
+                font-size: 0.9em;
+            }
+
+            .hero-buttons {
+                gap: 20px;
+            }
+
+            .register-buttons {
+                gap: 15px;
+            }
         }
 
         #mini-fest-detaylar {
@@ -84,6 +122,198 @@
             height: 450px;
             border: 0;
         }
+
+        .instagram-embed {
+            max-width: 400px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .instagram-content {
+            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .instagram-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+        }
+
+        .instagram-link {
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+
+        .instagram-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .instagram-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .instagram-placeholder h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .instagram-placeholder p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .follow-text {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1em;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .follow-text:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .register-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .btn.secondary-btn {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-color-light) 100%);
+            color: var(--primary-color);
+            box-shadow: 0 6px 20px rgba(192, 192, 192, 0.3);
+            border: 2px solid var(--primary-color);
+            font-weight: 600;
+            padding: 14px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn.secondary-btn:hover {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
+            color: var(--light-text-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 54, 93, 0.4);
+            border-color: var(--accent-color);
+        }
+
+        .registration-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .registration-info {
+            background: var(--card-background);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .registration-info h3 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .registration-info p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .registration-info p strong {
+            min-width: 80px;
+            color: var(--primary-color);
+        }
+
+        .registration-form {
+            background: var(--card-background);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .form-placeholder {
+            padding: 40px 20px;
+        }
+
+        .form-placeholder h3 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .form-placeholder p {
+            font-size: 1.1em;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-buttons {
+                gap: 15px;
+            }
+
+            .register-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .register-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .registration-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .registration-info,
+            .registration-form {
+                padding: 25px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,7 +328,8 @@
                     <li><a href="index.html">Ana Sayfa</a></li>
                     <li><a href="index.html">Hakkımızda</a></li>
                     <li><a href="universe-mini-fest.html">Mini-Talks</a></li>
-                    <li><a href="index.html#program">Program</a></li>
+                    <li><a href="#kayit-formu">Kayıt Formu</a></li>
+                    <!-- <li><a href="#program">Program</a></li> -->
                     <li><a href="index.html#iletisim">İletişim</a></li>
                 </ul>
                 <div class="burger">
@@ -111,7 +342,13 @@
                 <h1>UNIVERSE Mini-Talks</h1>
                 <p>Daha samimi, daha odaklı ve daha etkileşimli bir deneyim sizi bekliyor.</p>
                 <p>İlk Mini-Talks Etkinliğimiz Mimarlık üzerine!</p>
-                <a href="#mini-fest-detaylar" class="btn primary-btn">Detayları Keşfet <i class="fas fa-chevron-down"></i></a>
+                <div class="hero-buttons">
+                    <a href="#mini-fest-detaylar" class="btn primary-btn">Detayları Keşfet <i class="fas fa-chevron-down"></i></a>
+                    <div class="register-buttons">
+                        <a href="https://forms.gle/bimXCrDLMvyC4hRd6" target="_blank" rel="noopener noreferrer" class="btn secondary-btn">Şimdi Kaydol <i class="fas fa-user-plus"></i></a>
+                        <a href="https://forms.gle/bimXCrDLMvyC4hRd6" target="_blank" rel="noopener noreferrer" class="btn secondary-btn">Kayıt Ol <i class="fas fa-edit"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -149,7 +386,7 @@
                     <h3>Dr. Öğr. Üyesi Emel Başarık Aytekin</h3>
                     <p>İç Mimar</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/emlkum/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/emlkum/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="speaker-card">
@@ -157,7 +394,7 @@
                     <h3>İsmail Akgün</h3>
                     <p>Mimar</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/kentimgesi/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/kentimgesi/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="speaker-card">
@@ -165,7 +402,7 @@
                     <h3>Feyza Sevinç</h3>
                     <p>Mimar</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/feyzasevincdesign/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/feyzasevincdesign/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="speaker-card">
@@ -173,7 +410,60 @@
                     <h3>İlksen Karataban</h3>
                     <p>İç Mimar</p>
                     <div class="social-icons">
-                        <a href="https://www.instagram.com/ilksenkarataban/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/ilksenkarataban/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram" class="section">
+        <div class="container">
+            <h2 class="section-title">Instagram'da UNIVERSEFEST</h2>
+            <p class="section-description">En güncel haberler, duyurular ve özel içerikler için Instagram hesabımızı takip edin!</p>
+            <div class="instagram-embed">
+                <div class="instagram-content">
+                    <a href="https://www.instagram.com/universefest_official/" target="_blank" class="instagram-link">
+                        <div class="instagram-placeholder">
+                            <i class="fab fa-instagram instagram-icon"></i>
+                            <h3>@universefest_official</h3>
+                            <p>En güncel haberler ve özel içerikler için takip edin!</p>
+                            <span class="follow-text">Takip Et</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://www.instagram.com/universefest_official/" target="_blank" class="btn primary-btn">
+                    <i class="fab fa-instagram"></i> Instagram'da Takip Et
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="kayit-formu" class="section">
+        <div class="container">
+            <h2 class="section-title">Kayıt Formu</h2>
+            <p class="section-description">UNIVERSE Mini-Talks etkinliğimize katılmak için lütfen aşağıdaki formu doldurun.</p>
+            <div class="registration-content">
+                <div class="registration-info">
+                    <h3>Etkinlik Bilgileri</h3>
+                    <p><strong>Tarih:</strong> 25 Ekim 2025</p>
+                    <p><strong>Saat:</strong> 16:00 - 19:00</p>
+                    <p><strong>Yer:</strong> Maysa Coffee & More, Göztepe/İstanbul</p>
+                    <p><strong>Tema:</strong> Mimarlık ve İç Mimarlık</p>
+                </div>
+                <div class="registration-form">
+                    <div class="form-placeholder">
+                        <i class="fas fa-edit" style="font-size: 4em; color: var(--primary-color); margin-bottom: 20px;"></i>
+                        <h3>Mini-Talks: Mimarlık ve İç Mimarlık</h3>
+                        <p>Google Forms Kayıt Linki Aktif!</p>
+                        <p style="margin-top: 20px; font-size: 0.9em; color: var(--muted-text-color);">
+                            Aşağıdaki butona tıklayarak kayıt formunuza erişebilirsiniz.
+                        </p>
+                        <a href="https://forms.gle/bimXCrDLMvyC4hRd6" target="_blank" rel="noopener noreferrer" class="btn primary-btn" style="margin-top: 20px;">
+                            <i class="fas fa-external-link-alt"></i> Kayıt Formu
+                        </a>
                     </div>
                 </div>
             </div>
@@ -182,7 +472,7 @@
 
             <div class="location-map">
                 <h2>Etkinlik Yeri</h2>
-                <h3>Maysa Kafe</h3>
+                <h3>Maysa Coffee & More</h3>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.892752389323!2d29.053308299999994!3d40.983829199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac792eb4e2c93%3A0x9547d98f253e759f!2sMaysa%20Coffee%20%26%20More!5e0!3m2!1str!2str!4v1757261873156!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
@@ -190,7 +480,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 UNIVERSE Festivali. Tüm Hakları Saklıdır.</p>
+            <p>&copy; 2026 UNIVERSE Festivali. Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
 
