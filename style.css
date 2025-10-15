@@ -168,12 +168,12 @@ ul {
    ======================================== */
 .section {
     padding: 100px 0; /* Increased padding for better spacing */
-    scroll-margin-top: 320px; /* Adjust this value to match your nav+logo height */
+    scroll-margin-top: 360px; /* Increased to match larger nav height */
 }
 @media (max-width: 768px) {
     .section {
         padding: 80px 0; /* Increased mobile padding */
-        scroll-margin-top: 200px; /* Adjust for mobile nav/logo height */
+        scroll-margin-top: 240px; /* Increased for mobile nav height */
     }
 }
 
@@ -329,8 +329,8 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px; /* Fixed height to keep background compact */
-    padding: 10px 40px;
+    height: 100px; /* Increased height for better logo accommodation */
+    padding: 10px 40px 10px 220px;
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 500;
     background: rgba(26, 54, 93, 0.8);
@@ -343,7 +343,8 @@ nav.scrolled {
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 2px 10px rgba(26, 54, 93, 0.3);
     border-bottom: 1px solid rgba(192, 192, 192, 0.2);
-    padding: 5px 40px;
+    padding: 5px 40px 5px 220px;
+    height: 90px; /* Increased height when scrolled */
     transform: translateY(0);
 }
 
@@ -353,24 +354,19 @@ nav .logo {
 }
 
 nav .logo img {
-    height: 60px; /* Reasonable logo size for desktop */
+    height: 200px; /* Increased logo size for desktop */
     width: auto; /* Orantılı genişlik */
     position: absolute;
     top: 50%;
-    left: 40px;
+    left: 0px;
     transform: translateY(-50%); /* Center vertically in nav */
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Logo için çok smooth geçiş */
     filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.3));
     z-index: 100;
 }
 
-nav .logo img:hover {
-    transform: scale(1.05); /* Hover'da hafif büyüt */
-}
-
 /* Eğer navigasyon kaydırıldığında logo boyutu değişsin isterseniz */
 nav.scrolled .logo img {
-    height: 50px; /* PNG logo için kaydırıldığında daha küçük boyut */
+    height: 150px; /* Increased PNG logo size for scrolled nav */
     top: 50%;
     transform: translateY(-50%);
 }
@@ -450,7 +446,7 @@ nav .nav-links li a:not(:hover) {
 }
 
 .hero-content {
-    margin-top: 120px; /* Reasonable margin for normal logo size */
+    margin-top: 140px; /* Increased margin for larger nav height */
     animation: heroContentFadeIn 1.5s ease-out 0.5s both;
 }
 
@@ -1158,8 +1154,8 @@ footer {
     nav .nav-links {
         position: fixed;
         right: -100%;
-        top: 70px; /* Start below nav bar */
-        height: calc(100vh - 70px); /* Fill remaining screen height */
+        top: 90px; /* Start below increased nav bar */
+        height: calc(100vh - 90px); /* Fill remaining screen height */
         width: 100%;
         background: linear-gradient(135deg,
             rgba(44, 58, 90, 0.98) 0%,
@@ -1236,26 +1232,26 @@ footer {
     
     /* Logo mobile */
     nav {
-        height: 70px; /* Reduce nav height for mobile */
-        padding: 10px 20px;
+        height: 90px; /* Increased nav height for mobile */
+        padding: 10px 20px 10px 170px;
     }
 
     nav .logo img {
-        height: 65px; /* Larger mobile logo size for better visibility */
+        height: 150px; /* Increased mobile logo size for better visibility */
         top: 50%;
-        left: 20px;
+        left: 0px;
         transform: translateY(-50%);
     }
 
     nav.scrolled .logo img {
-        height: 60px; /* Larger when scrolled on mobile for better visibility */
+        height: 140px; /* Increased when scrolled on mobile for better visibility */
         top: 50%;
         transform: translateY(-50%);
     }
     
     /* Hero Section Mobile */
     .hero-content {
-        margin-top: 100px; /* Reasonable margin for mobile */
+        margin-top: 120px; /* Increased margin for mobile */
     }
     
     .hero-content h1 {
@@ -1439,19 +1435,19 @@ footer {
     }
     
     nav {
-        height: 60px; /* Even smaller nav height for extra small screens */
-        padding: 8px 15px;
+        height: 80px; /* Increased nav height for extra small screens */
+        padding: 8px 15px 8px 120px;
     }
 
     nav .logo img {
-        height: 45px; /* Smaller logo for extra small screens */
+        height: 100px; /* Increased logo size for extra small screens */
         top: 50%;
-        left: 15px;
+        left: 0px;
         transform: translateY(-50%);
     }
 
     nav.scrolled .logo img {
-        height: 40px; /* Even smaller when scrolled on extra small screens */
+        height: 90px; /* Increased when scrolled on extra small screens */
         top: 50%;
         transform: translateY(-50%);
     }
