@@ -240,6 +240,8 @@ ul {
     max-width: 800px;
     margin: 20px auto 80px auto; /* Increased bottom margin */
     font-weight: 400;
+    text-align: center;
+
 }
 
 /* ========================================
@@ -757,6 +759,12 @@ nav .nav-links li a:not(:hover) {
 
 .centered-text {
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px auto; /* Increased bottom margin */
+    font-size: 1.2em;
+    color: var(--text-color);
+    font-weight: 400;
+
 }
 
 /* ========================================
