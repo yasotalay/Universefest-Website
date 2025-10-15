@@ -755,6 +755,10 @@ nav .nav-links li a:not(:hover) {
     color: var(--text-color);
 }
 
+.centered-text {
+    text-align: center;
+}
+
 /* ========================================
    SPEAKERS SECTION
    ======================================== */
