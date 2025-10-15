@@ -12,11 +12,13 @@
         .mini-fest-hero {
             background: linear-gradient(rgba(82, 124, 167, 0.7), rgba(65, 111, 156, 0.7)), url('https://images.unsplash.com/photo-1579547605948-43899709ec5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTMzNXwwfDF8cmFuZG9tfHx8fHx8fHwxNzAzMjg2NDA3fA&ixlib=rb-4.0.3&q=80&w=1920') no-repeat center center/cover;
             height: 80vh; /* Increased height for better button layout */
-            display: flex;
+            display: flex !important;
             align-items: center;
             color: var(--white);
             text-align: center;
             position: relative;
+            z-index: 1;
+            overflow: visible;
         }
 
         .mini-fest-hero h1 {
@@ -34,6 +36,18 @@
 
         .mini-fest-hero .hero-content {
             margin-top: 120px; /* Adjusted for taller hero section */
+            position: relative;
+            z-index: 50;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            width: 100%;
+            max-width: none;
+        }
+
+        .mini-fest-hero {
+            position: relative;
+            z-index: 1;
         }
 
         /* Mobile specific adjustments */
@@ -194,40 +208,122 @@
         }
 
         .hero-buttons {
-            display: flex;
+            display: flex !important;
             flex-direction: column;
             align-items: center;
             gap: 25px;
             margin-top: 30px;
+            position: relative;
+            z-index: 100;
+            visibility: visible;
+            opacity: 1;
         }
 
         .register-buttons {
-            display: flex;
+            display: flex !important;
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 15px;
+            position: relative;
+            z-index: 100;
+            visibility: visible;
+            opacity: 1;
         }
 
         .btn.secondary-btn {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-color-light) 100%);
-            color: var(--primary-color);
-            box-shadow: 0 6px 20px rgba(192, 192, 192, 0.3);
-            border: 2px solid var(--primary-color);
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        .btn.secondary-btn {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-color-light) 100%) !important;
+            color: var(--primary-color) !important;
+            box-shadow: 0 6px 20px rgba(192, 192, 192, 0.3) !important;
+            border: 2px solid var(--primary-color) !important;
             font-weight: 600;
             padding: 14px 30px;
             border-radius: 50px;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
+            position: relative;
+            z-index: 200;
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
         }
 
         .btn.secondary-btn:hover {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%);
-            color: var(--light-text-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-color-light) 100%) !important;
+            color: var(--light-text-color) !important;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(26, 54, 93, 0.4);
             border-color: var(--accent-color);
+        }
+
+        /* Ensure buttons are always visible */
+        .hero-content * {
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        /* Force button visibility for published site */
+        .hero-buttons,
+        .hero-buttons .btn,
+        .register-buttons,
+        .register-buttons .btn {
+            display: flex !important;
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 999 !important;
+            transform: none !important;
+            animation: none !important;
+        }
+
+        /* Additional failsafe for button visibility */
+        .mini-fest-hero .hero-content .hero-buttons,
+        .mini-fest-hero .hero-content .register-buttons {
+            position: relative !important;
+            z-index: 1000 !important;
+            transform: translateZ(0) !important;
+        }
+
+        /* Override any global styles that might hide buttons */
+        * {
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        /* Specific override for hero content elements */
+        .mini-fest-hero .hero-content,
+        .mini-fest-hero .hero-content *,
+        .hero-buttons,
+        .hero-buttons *,
+        .register-buttons,
+        .register-buttons * {
+            visibility: visible !important;
+            opacity: 1 !important;
+            display: flex !important;
+            display: inline-flex !important;
+        }
+
+        /* Final failsafe - ensure buttons are always visible */
+        html body header.mini-fest-hero div.hero-content div.hero-buttons,
+        html body header.mini-fest-hero div.hero-content div.register-buttons {
+            display: flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 9999 !important;
+        }
+
+        /* Ensure no transforms hide the buttons */
+        .mini-fest-hero * {
+            transform: none !important;
         }
 
         .registration-content {
@@ -289,19 +385,33 @@
 
         /* Mobile responsive adjustments */
         @media (max-width: 768px) {
+            .mini-fest-hero {
+                height: 70vh !important;
+                min-height: 500px;
+            }
+
             .hero-buttons {
-                gap: 15px;
+                gap: 15px !important;
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
             }
 
             .register-buttons {
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
             }
 
             .register-buttons .btn {
                 width: 100%;
                 max-width: 250px;
+                display: inline-flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
             }
 
             .registration-content {
@@ -312,6 +422,15 @@
             .registration-info,
             .registration-form {
                 padding: 25px 20px;
+            }
+
+            .btn.primary-btn,
+            .btn.secondary-btn {
+                display: inline-flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                position: relative !important;
+                z-index: 300 !important;
             }
         }
     </style>

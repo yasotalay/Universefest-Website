@@ -58,7 +58,7 @@ body {
     color: var(--text-color);
     background-color: var(--light-background);
     overflow-x: hidden; /* Yatay kaydırmayı engelle */
-    opacity: 0;
+    opacity: 1; /* Ensure body is always visible */
     animation: pageLoad 1s ease-out 0.5s both;
 }
 
@@ -71,6 +71,15 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Ensure buttons are always visible */
+.hero-buttons,
+.register-buttons,
+.btn.secondary-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
 }
 
 .container {

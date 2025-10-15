@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Ensure buttons are always visible
+    const buttons = document.querySelectorAll('.hero-buttons, .register-buttons, .btn.secondary-btn');
+    buttons.forEach(button => {
+        button.style.display = 'flex';
+        button.style.visibility = 'visible';
+        button.style.opacity = '1';
+    });
+
     // Smooth Scrolling for Navigation
     document.querySelectorAll('nav ul li a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
