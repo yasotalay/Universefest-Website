@@ -73,26 +73,25 @@ body {
     }
 }
 
-/* Hero content vertical layout */
-.hero-content {
+/* Hero content vertical layout - only for mini-fest page */
+.mini-fest-hero .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.hero-content h1 {
+.mini-fest-hero .hero-content h1 {
     order: 1;
     margin-bottom: 20px;
 }
 
-.hero-content p {
+.mini-fest-hero .hero-content p {
     order: 2;
     margin-bottom: 30px;
 }
 
 .hero-buttons {
-    order: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
