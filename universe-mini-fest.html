@@ -208,33 +208,35 @@
         }
 
         .hero-buttons {
-            display: flex !important;
+            display: flex;
             flex-direction: column;
             align-items: center;
             gap: 25px;
             margin-top: 30px;
-            position: relative;
-            z-index: 100;
-            visibility: visible;
-            opacity: 1;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .register-buttons {
-            display: flex !important;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            position: relative;
-            z-index: 100;
-            visibility: visible;
-            opacity: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .btn.secondary-btn {
-            display: inline-flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
+        .btn.secondary-btn,
+        .btn.primary-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
 
         .btn.secondary-btn {
@@ -250,9 +252,15 @@
             letter-spacing: 1px;
             position: relative;
             z-index: 200;
-            display: inline-flex !important;
+            display: block !important;
             visibility: visible !important;
             opacity: 1 !important;
+            width: 100% !important;
+            max-width: 300px !important;
+            margin: 0 auto !important;
+            text-align: center;
+            justify-content: center;
+            box-sizing: border-box !important;
         }
 
         .btn.secondary-btn:hover {
@@ -263,68 +271,6 @@
             border-color: var(--accent-color);
         }
 
-        /* Ensure buttons are always visible */
-        .hero-content * {
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-
-        /* Force button visibility for published site */
-        .hero-buttons,
-        .hero-buttons .btn,
-        .register-buttons,
-        .register-buttons .btn {
-            display: flex !important;
-            display: inline-flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            position: relative !important;
-            z-index: 999 !important;
-            transform: none !important;
-            animation: none !important;
-        }
-
-        /* Additional failsafe for button visibility */
-        .mini-fest-hero .hero-content .hero-buttons,
-        .mini-fest-hero .hero-content .register-buttons {
-            position: relative !important;
-            z-index: 1000 !important;
-            transform: translateZ(0) !important;
-        }
-
-        /* Override any global styles that might hide buttons */
-        * {
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-
-        /* Specific override for hero content elements */
-        .mini-fest-hero .hero-content,
-        .mini-fest-hero .hero-content *,
-        .hero-buttons,
-        .hero-buttons *,
-        .register-buttons,
-        .register-buttons * {
-            visibility: visible !important;
-            opacity: 1 !important;
-            display: flex !important;
-            display: inline-flex !important;
-        }
-
-        /* Final failsafe - ensure buttons are always visible */
-        html body header.mini-fest-hero div.hero-content div.hero-buttons,
-        html body header.mini-fest-hero div.hero-content div.register-buttons {
-            display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            position: relative !important;
-            z-index: 9999 !important;
-        }
-
-        /* Ensure no transforms hide the buttons */
-        .mini-fest-hero * {
-            transform: none !important;
-        }
 
         .registration-content {
             display: grid;
@@ -391,27 +337,33 @@
             }
 
             .hero-buttons {
-                gap: 15px !important;
-                display: flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
+                gap: 15px;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+
+            .main-button,
+            .register-button-item {
+                width: 100%;
+                display: block;
             }
 
             .register-buttons {
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
-                display: flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
+                display: flex;
+                width: 100%;
             }
 
-            .register-buttons .btn {
+            .register-buttons .btn,
+            .register-button-item .btn {
                 width: 100%;
                 max-width: 250px;
-                display: inline-flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
+                display: block;
+                margin-bottom: 10px;
             }
 
             .registration-content {
@@ -426,11 +378,10 @@
 
             .btn.primary-btn,
             .btn.secondary-btn {
-                display: inline-flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                position: relative !important;
-                z-index: 300 !important;
+                display: block;
+                width: 100%;
+                max-width: 250px;
+                margin: 0 auto;
             }
         }
     </style>
@@ -461,10 +412,19 @@
                 <h1>UNIVERSE Mini-Talks</h1>
                 <p>Daha samimi, daha odaklı ve daha etkileşimli bir deneyim sizi bekliyor.</p>
                 <p>İlk Mini-Talks Etkinliğimiz Mimarlık üzerine!</p>
-                
-                <div class="register-buttons">
-                    <a href="https://forms.gle/bimXCrDLMvyC4hRd6" target="_blank" rel="noopener noreferrer" class="btn secondary-btn">Şimdi Kaydol <i class="fas fa-user-plus"></i></a>
-                    <a href="https://forms.gle/bimXCrDLMvyC4hRd6" target="_blank" rel="noopener noreferrer" class="btn secondary-btn">Kayıt Ol <i class="fas fa-edit"></i></a>
+
+                <div class="hero-buttons">
+                    <div class="main-button">
+                        <a href="#mini-fest-detaylar" class="btn primary-btn">Detayları Keşfet <i class="fas fa-chevron-down"></i></a>
+                    </div>
+                    <div class="register-buttons">
+                        <div class="register-button-item">
+                            <a href="https://forms.gle/bimXCrDLMvyC4hRd6" target="_blank" rel="noopener noreferrer" class="btn secondary-btn">Şimdi Kaydol <i class="fas fa-user-plus"></i></a>
+                        </div>
+                        <div class="register-button-item">
+                            <a href="https://forms.gle/bimXCrDLMvyC4hRd6" target="_blank" rel="noopener noreferrer" class="btn secondary-btn">Kayıt Ol <i class="fas fa-edit"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         
